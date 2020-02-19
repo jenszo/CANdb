@@ -11,10 +11,10 @@ Furthermore, some of my compilation and installation parameters simply differ fr
 
 *Changes:*
 - Building the library with -fPIC
-- Allowing installation of Debug and Release variants for bundles distribution
-- Distributing small CMake Script to pull in CANdb as a dependancy.
+- Allowing installation of Debug and Release variants for bundled distribution
+- Distributing small CMake script to pull in CANdb as a dependancy in external projects
 - Versioning / Tagging (using the release date)
-- Removing spdlog dependency to their development branch; replacing it with a cmake find script with release version requirement to avoid linking issues with my own libraries when spdlog changes it's API.
+- Removing spdlog dependancy to their development branch; replacing it with a cmake find script with release version requirement to avoid linking issues with my own libraries when spdlog changes it's API.
 - Travis builds ARM Linux as well (I need this to run on Raspberry) but dumps appveyor (I dont need Windows builds)
 
 Down the line, the branch 'genivi' is supposed to be merged with changes from genivi's 'master' branch.
