@@ -17,8 +17,8 @@ before_script:
   - cd 3rdParty/spdlog && git checkout v1.4.2 && cd ../..
 
 script:
-  - export CMAKE_BUILD_TYPE=Release
+  - export CMAKE_BUILD_TYPE=Release CANDB__TRAVIS_BUILD=TRUE
   - ./.travis.sh
-  - export CMAKE_BUILD_TYPE=Debug 
+  - export CMAKE_BUILD_TYPE=Debug CANDB__TRAVIS_BUILD=TRUE
   - ./.travis.sh
     

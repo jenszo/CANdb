@@ -5,7 +5,7 @@ project(CANdb CXX C)
 option(CANDB__WITH_COVERAGE "Build with coverage" OFF)
 option(CANDB__WITH_TESTS "Build with test" ON)
 option(CANDB__WITH_TOOLS "Build example dbc tools" ON)
-option(CANDB__TRAVIS_BUILD "Build via travis" ON)
+option(CANDB__TRAVIS_BUILD "Build via travis" OFF)
 
 set(CMAKE_CXX_STANDARD 14)
 
