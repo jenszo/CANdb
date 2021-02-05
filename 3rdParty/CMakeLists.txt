@@ -19,4 +19,6 @@ if (CANDB__TRAVIS_BUILD)
     target_include_directories(${LIBSPDLOG} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/spdlog/include)
 endif (CANDB__TRAVIS_BUILD )
 
+add_library(expected INTERFACE)
+target_include_directories(expected INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/expected)
 add_library(tl::expected ALIAS expected)

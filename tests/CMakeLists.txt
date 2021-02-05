@@ -7,7 +7,7 @@ function(candb_add_test test_name)
 endfunction()
 
 add_library(test_helper STATIC test_helper.cpp)
-target_link_libraries(test_helper PUBLIC spdlog)
+target_link_libraries(test_helper PUBLIC ${LIBSPDLOG})
 target_compile_definitions(test_helper PUBLIC DBC_DIR="${CMAKE_CURRENT_SOURCE_DIR}/dbc/")
 
 # check if c++17 filesystem is in place
