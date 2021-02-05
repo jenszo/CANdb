@@ -16,6 +16,7 @@ Furthermore, some of my compilation and installation parameters simply differ fr
 - Versioning / Tagging (using the release date)
 - Removing spdlog dependancy to their development branch; replacing it with a cmake find script with release version requirement to avoid linking issues with my own libraries when spdlog changes it's API.
 - Travis builds ARM Linux as well (I need this to run on Raspberry) but dumps appveyor (I dont need Windows builds)
+- `CANdb::DBCSimpleParser` wrapping around internal std::expected usage to avoid a) this particular dependency when linking and b) potential binary conflicts in the long run.
 
 Down the line, the branch 'genivi' is supposed to be merged with changes from genivi's 'master' branch.
 I do my work on this master branch and merge stable revisions from there.
