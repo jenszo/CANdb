@@ -198,7 +198,6 @@ CANdb::CanDbOrError parse(peg::parser& pegParser, const std::string& data)
     uint8_t muxNdx = CANsignal::NonMuxed;
     bool muxedMsg = false;
 
-    std::string muxName;
     std::vector<CANsignal> signals;
     pegParser["message"] = [&can_db, &numbers, &signals, &idents,
                             &muxNdx, &muxedMsg](const peg::SemanticValues&) {

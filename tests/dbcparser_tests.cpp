@@ -3,6 +3,7 @@
 
 #include "dbc_parser_data.hpp"
 #include "dbcparser.h"
+#include "dbc.h"
 #include "log.hpp"
 
 using strings = std::vector<std::string>;
@@ -29,6 +30,10 @@ struct ValuesTest : public ::testing::TestWithParam<strings> {
 
 struct MessageTests : public ::testing::Test {
     CANdb::DBCParser parser;
+};
+
+struct SimpleParserTests : public ::testing::Test {
+    CANdb::DBCSimpleParser parser;
 };
 
 TEST_F(DBCParserTests, empty_data)
@@ -326,3 +331,24 @@ INSTANTIATE_TEST_SUITE_P(Values, ValuesTableTest,
         "DI_aebFaultReason 15 "
         "\"DI_AEB_FAULT_DAS_REQ_DI_UNAVAIL\" 14 "
         "\"DI_AEB_FAULT_ACCEL_REQ_INVALID\" ;" }));
+
+
+// Simple parser instantiation
+TEST_F(SimpleParserTests, simple_parser_api)
+{
+    std::string dbc =
+        R"(VERSION ""
+
+NS_ :
+  NS_DESC
+  NS_DESC2
+
+BU_ :
+  NEO
+  MCU
+  GTW
+
+)";
+    auto db = parser.parse(dbc + test_data::bo_muxed_signals);
+    ASSERT_TRUE(db);
+}

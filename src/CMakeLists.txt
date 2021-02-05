@@ -1,8 +1,14 @@
 find_package(Boost REQUIRED)
 set(
   SRC
+  dbc.h
+  dbc.cpp
+  parser.hpp
+  dbcparser.h
   dbcparser.cpp
+  parsererror.hpp
   parsererror.cpp
+  lambda_visitor.hpp
   cantypes.hpp
   log.hpp
 )
@@ -41,6 +47,7 @@ install(
         log.hpp
         parser.hpp
         dbcparser.h 
+        dbc.h
     DESTINATION 
         include
 )
