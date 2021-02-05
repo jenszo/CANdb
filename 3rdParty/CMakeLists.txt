@@ -7,6 +7,7 @@ endif((CANDB__WITH_TESTS OR CANDB__WITH_COVERAGE))
 if(CANDB__WITH_TOOLS)
     add_subdirectory(termcolor)
     set(CXXOPTS_BUILD_EXAMPLES OFF CACHE BOOL "")
+    set(CXXOPTS_BUILD_TESTS OFF CACHE BOOL "")
     add_subdirectory(cxxopts)
 endif(CANDB__WITH_TOOLS)
 
@@ -17,3 +18,5 @@ if (CANDB__TRAVIS_BUILD)
     add_library(${LIBSPDLOG} INTERFACE)
     target_include_directories(${LIBSPDLOG} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/spdlog/include)
 endif (CANDB__TRAVIS_BUILD )
+
+add_library(tl::expected ALIAS expected)

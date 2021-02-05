@@ -1,5 +1,5 @@
 language: cpp
-dist: xenial
+dist: focal
 arch:
   - amd64
   - arm64
@@ -10,7 +10,7 @@ notifications:
   
 before_install:
   - sudo apt-get update
-  - sudo apt-get -y install libboost-dev
+  - sudo apt-get -y install libboost-dev libboost-filesystem-dev
 
 before_script:
   - git --version
@@ -21,4 +21,3 @@ script:
   - ./.travis.sh
   - export CMAKE_BUILD_TYPE=Debug CANDB__TRAVIS_BUILD=TRUE
   - ./.travis.sh
-    
